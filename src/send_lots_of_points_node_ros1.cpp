@@ -71,7 +71,7 @@ int main(int argc, char **argv)
   int count = 0;
   while (ros::ok())
   {
-    width++;
+    // width++;
     msg.points.resize(width * length + (count % 2));
 
     for (int x = 0; x < width; x++)
@@ -110,6 +110,6 @@ int main(int argc, char **argv)
 
     ros::spinOnce();
     loop_rate.sleep();
-    count++;
+    // count++;
   }
 }
