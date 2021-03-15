@@ -62,15 +62,15 @@ int main(int argc, char **argv)
   ros::Publisher pub2 = nh.advertise<sensor_msgs::PointCloud2>("pointcloud2", 100);
   ros::Rate loop_rate(rate);
 
-  sensor_msgs::PointCloud msg;
-  msg.points.resize(width * length);
-  msg.header.frame_id = "map";
-
-  pcl::PointCloud<pcl::PointXYZI> cloud;
 
   int count = 0;
   while (ros::ok())
   {
+    sensor_msgs::PointCloud msg;
+    msg.points.resize(width * length);
+    msg.header.frame_id = "map";
+
+    pcl::PointCloud<pcl::PointXYZI> cloud;
     // width++;
     msg.points.resize(width * length + (count % 2));
 
